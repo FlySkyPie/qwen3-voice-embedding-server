@@ -9,13 +9,16 @@ from openai.types import (
 )
 from openai.types.create_embedding_response import Usage, CreateEmbeddingResponse
 from fastapi import APIRouter
-from src.embeddings import service as embedding_service
+from src.embeddings.transformer import TransformerDep
 
 router = APIRouter()
 
 
 @router.post("/embeddings")
-async def embeddings(params: EmbeddingCreateParams) -> CreateEmbeddingResponse:
+async def embeddings(
+    params: EmbeddingCreateParams,
+    transformer: TransformerDep,
+) -> CreateEmbeddingResponse:
     if isinstance(params["input"], str):
         uri = DataURI(params["input"])
         if uri.mimetype != "audio/mpeg":
@@ -25,7 +28,7 @@ async def embeddings(params: EmbeddingCreateParams) -> CreateEmbeddingResponse:
             temp_file.write(uri.data)
             temp_file.flush()
 
-            result = embedding_service.embedding_audio(temp_file.name)
+            result = transformer.embedding(temp_file.name)
             return CreateEmbeddingResponse(
                 data=[
                     Embedding(
