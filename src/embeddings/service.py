@@ -17,4 +17,5 @@ def embedding_audio(audio_apth: str):
 
     with torch.no_grad():
         embedding = model(**inputs).last_hidden_state  # (1, 2048)
-        return embedding
+        print("embedding",embedding)
+        return embedding[0]

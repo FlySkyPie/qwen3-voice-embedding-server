@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from src.embeddings import router as router_service
+from src.embeddings import router as embedding_router
 
 app = FastAPI()
 
-app.include_router(router_service)
+app.include_router(embedding_router.router)

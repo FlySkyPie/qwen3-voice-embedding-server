@@ -27,6 +27,9 @@ license = { text = "MIT" }
 [tool.pdm]
 distribution = false
 
+[tool.fastapi]
+entrypoint = "src.main:app"
+
 [tool.pdm.scripts]
 start.cmd = "fastapi run"
 start.env.OverrideDefaultFP64Settings = "1"

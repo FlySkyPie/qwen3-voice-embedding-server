@@ -1,6 +1,13 @@
 import base64
-import tempfile
+from tempfile import NamedTemporaryFile
 from datauri import DataURI
+from typing import Sequence
+from openai.types import (
+    EmbeddingCreateParams,
+    CreateEmbeddingResponse,
+    Embedding,
+)
+from openai.types.create_embedding_response import Usage, CreateEmbeddingResponse
 from fastapi import APIRouter
 from src.embeddings import service as embedding_service
 
@@ -8,35 +15,34 @@ router = APIRouter()
 
 
 @router.post("/embeddings")
-async def embeddings():
-    _input: str = ""
+async def embeddings(params: EmbeddingCreateParams) -> CreateEmbeddingResponse:
+    if isinstance(params["input"], str):
+        uri = DataURI(params["input"])
+        if uri.mimetype != "audio/mpeg":
+            raise Exception("Not supported!")
 
-    uri = DataURI(_input)
-    if uri.mimetype != 'audio/mpeg':
-        raise Exception("Not supported!")
+        with NamedTemporaryFile(delete=True, suffix=".wav") as temp_file:
+            temp_file.write(uri.data)
+            temp_file.flush()
 
-    # TODO write into tmp file
-    uri.data
+            result = embedding_service.embedding_audio(temp_file.name)
+            return CreateEmbeddingResponse(
+                data=[
+                    Embedding(
+                        embedding=result,
+                        index=0,
+                        object="embedding",
+                    )
+                ],
+                model="marksverdhei/Qwen3-Voice-Embedding-12Hz-1.7B",
+                object="list",
+                usage=Usage(
+                    prompt_tokens=0,
+                    total_tokens=0,
+                ),
+            )
 
+    if isinstance(params["input"], Sequence) and not isinstance(params["input"], str):
+        raise Exception("Not implemented yet")
 
-    with urlopen(_input) as response:
-        mimetype = response.info().get_content_type()
-
-        data = response.read()
-        image = base64.b64encode(data)
-
-    # 1. 解碼 Base64 資料
-    header, data = (
-        audio_base64.split(",") if "," in audio_base64 else (None, audio_base64)
-    )
-    audio_bytes = base64.b64decode(data)
-
-    # 2. 建立暫時檔案 (delete=True 會在檔案關閉時自動刪除)
-    with tempfile.NamedTemporaryFile(delete=True, suffix=".wav") as temp_file:
-        temp_file.write(audio_bytes)
-        temp_file.flush()  # 確保資料已寫入磁碟
-
-        # 3. 取得路徑並傳給函式庫
-        result = process_audio(temp_file.name)
-
-        return {"status": "success", "result": result}
+    raise Exception("Not implemented yet")
