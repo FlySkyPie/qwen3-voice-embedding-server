@@ -1,9 +1,9 @@
 import librosa
-import torch
-import intel_extension_for_pytorch as ipex
+import numpy as np
+import onnxruntime as ort
 from typing import Annotated
-from transformers import AutoModel, AutoProcessor
 from fastapi import Depends
+from huggingface_hub import hf_hub_download
 
 from src.embeddings.decorator import Singleton
 
@@ -11,26 +11,36 @@ from src.embeddings.decorator import Singleton
 @Singleton
 class EmbeddingTransformer:
     def __init__(self):
-        processor = AutoProcessor.from_pretrained(
-            "marksverdhei/Qwen3-Voice-Embedding-12Hz-1.7B",
-            trust_remote_code=True,
+        model_path = hf_hub_download(
+            repo_id="marksverdhei/Qwen3-Voice-Embedding-12Hz-1.7B-onnx",
+            filename="speaker_encoder_fp32.onnx",
         )
-        model = AutoModel.from_pretrained(
-            "marksverdhei/Qwen3-Voice-Embedding-12Hz-1.7B",
-            trust_remote_code=True,
+
+        session = ort.InferenceSession(
+            model_path,
+            providers=["WebGpuExecutionProvider"],
         )
-        model.eval()
 
-        self.processor = processor
-        self.model = model
+        self.session = session
 
-    def embedding(self, audio_apth: str):
-        audio, sr = librosa.load(audio_apth, sr=None, mono=True)
-        inputs = self.processor(audio, sampling_rate=sr)
+    def embedding(self, audio_path: str):
+        audio, sr = librosa.load(audio_path, sr=None, mono=True)
+        mel = librosa.feature.melspectrogram(
+            y=audio,
+            sr=24000,
+            n_fft=1024,
+            hop_length=256,
+            n_mels=128,
+            fmin=0,
+            fmax=12000,
+        )
 
-        with torch.no_grad():
-            embedding = self.model(**inputs).last_hidden_state  # (1, 2048)
-            return embedding[0]
+        mel = np.log(np.clip(mel, a_min=1e-5, a_max=None))
+        mel = mel.T[np.newaxis, ...]  # (1, time, 128)
+
+        # Run inference
+        embedding = self.session.run(None, {"mel_spectrogram": mel.astype(np.float32)})[0]
+        return embedding[0]
 
 
 def get_transformer():

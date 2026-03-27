@@ -5,30 +5,10 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:3dc0d2daa926886a0179c3ed4e104540fd54ad72fc0d8664519c83d57644b4a2"
+content_hash = "sha256:1f8ebf790b0df6ac76b86ca7afe9a1e9efb82893aa74c59342c353690ab81f1c"
 
 [[metadata.targets]]
 requires_python = "==3.12.*"
-
-[[package]]
-name = "accelerate"
-version = "1.13.0"
-requires_python = ">=3.10.0"
-summary = "Accelerate"
-groups = ["default"]
-dependencies = [
-    "huggingface-hub>=0.21.0",
-    "numpy>=1.17",
-    "packaging>=20.0",
-    "psutil",
-    "pyyaml",
-    "safetensors>=0.4.3",
-    "torch>=2.0.0",
-]
-files = [
-    {file = "accelerate-1.13.0-py3-none-any.whl", hash = "sha256:cf1a3efb96c18f7b152eb0fa7490f3710b19c3f395699358f08decca2b8b62e0"},
-    {file = "accelerate-1.13.0.tar.gz", hash = "sha256:d631b4e0f5b3de4aff2d7e9e6857d164810dfc3237d54d017f075122d057b236"},
-]
 
 [[package]]
 name = "annotated-doc"
@@ -220,21 +200,6 @@ files = [
 ]
 
 [[package]]
-name = "dpcpp-cpp-rt"
-version = "2025.1.1"
-summary = "Intel® oneAPI DPC++/C++ Compiler Runtime package"
-groups = ["default"]
-dependencies = [
-    "intel-opencl-rt==2025.1.1",
-    "intel-openmp==2025.1.1",
-    "intel-sycl-rt==2025.1.1",
-]
-files = [
-    {file = "dpcpp_cpp_rt-2025.1.1-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:670285c8aa5f242456d3d95b9fa7cec12ad2ac34d785470780af4cd58be054c0"},
-    {file = "dpcpp_cpp_rt-2025.1.1-py2.py3-none-win_amd64.whl", hash = "sha256:5470a3b81c90a4064b0495fd05257e26cacd8e4c9bed1ed15481798cd08f41ff"},
-]
-
-[[package]]
 name = "email-validator"
 version = "2.3.0"
 requires_python = ">=3.8"
@@ -296,6 +261,7 @@ dependencies = [
     "fastapi-cli==0.0.24",
     "fastapi-cli==0.0.24",
     "fastapi-cli==0.0.24",
+    "fastapi-cli==0.0.24",
     "fastapi-cloud-cli>=0.1.1",
     "uvicorn[standard]>=0.15.0",
 ]
@@ -337,6 +303,7 @@ groups = ["default"]
 dependencies = [
     "email-validator>=2.0.0",
     "fastapi-cli[standard]>=0.0.8",
+    "fastapi==0.135.2",
     "fastapi==0.135.2",
     "fastapi==0.135.2",
     "fastapi==0.135.2",
@@ -388,6 +355,15 @@ groups = ["default"]
 files = [
     {file = "filelock-3.25.2-py3-none-any.whl", hash = "sha256:ca8afb0da15f229774c9ad1b455ed96e85a81373065fb10446672f64444ddf70"},
     {file = "filelock-3.25.2.tar.gz", hash = "sha256:b64ece2b38f4ca29dd3e810287aa8c48182bbecd1ae6e9ae126c9b35f1382694"},
+]
+
+[[package]]
+name = "flatbuffers"
+version = "25.12.19"
+summary = "The FlatBuffers serialization format for Python"
+groups = ["default"]
+files = [
+    {file = "flatbuffers-25.12.19-py2.py3-none-any.whl", hash = "sha256:7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4"},
 ]
 
 [[package]]
@@ -482,7 +458,7 @@ files = [
 
 [[package]]
 name = "huggingface-hub"
-version = "1.7.2"
+version = "1.8.0"
 requires_python = ">=3.9.0"
 summary = "Client library to download and publish models, datasets and other repos on the huggingface.co hub"
 groups = ["default"]
@@ -498,8 +474,8 @@ dependencies = [
     "typing-extensions>=4.1.0",
 ]
 files = [
-    {file = "huggingface_hub-1.7.2-py3-none-any.whl", hash = "sha256:288f33a0a17b2a73a1359e2a5fd28d1becb2c121748c6173ab8643fb342c850e"},
-    {file = "huggingface_hub-1.7.2.tar.gz", hash = "sha256:7f7e294e9bbb822e025bdb2ada025fa4344d978175a7f78e824d86e35f7ab43b"},
+    {file = "huggingface_hub-1.8.0-py3-none-any.whl", hash = "sha256:d3eb5047bd4e33c987429de6020d4810d38a5bef95b3b40df9b17346b7f353f2"},
+    {file = "huggingface_hub-1.8.0.tar.gz", hash = "sha256:c5627b2fd521e00caf8eff4ac965ba988ea75167fad7ee72e17f9b7183ec63f3"},
 ]
 
 [[package]]
@@ -511,117 +487,6 @@ groups = ["default"]
 files = [
     {file = "idna-3.11-py3-none-any.whl", hash = "sha256:771a87f49d9defaf64091e6e6fe9c18d4833f140bd19464795bc32d966ca37ea"},
     {file = "idna-3.11.tar.gz", hash = "sha256:795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902"},
-]
-
-[[package]]
-name = "impi-rt"
-version = "2021.15.0"
-summary = "Intel® MPI Library"
-groups = ["default"]
-marker = "platform_system == \"Linux\" and platform_machine == \"x86_64\""
-files = [
-    {file = "impi_rt-2021.15.0-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:1e900c630d6396c8a33816de9866d74f06419903db454899045fadb05ab390f1"},
-    {file = "impi_rt-2021.15.0-py2.py3-none-win_amd64.whl", hash = "sha256:d5ce4ae07c6af2b4deff6ec29a3171a922606fbd376400bc26e6955804db937e"},
-]
-
-[[package]]
-name = "intel-cmplr-lib-rt"
-version = "2025.1.1"
-summary = "Intel® oneAPI Runtime COMMON LIBRARIES package"
-groups = ["default"]
-files = [
-    {file = "intel_cmplr_lib_rt-2025.1.1-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:42409cfb10b8ed2c90fa985cf156f26b51cec61b1fb0bdff04afdeefa1afd875"},
-    {file = "intel_cmplr_lib_rt-2025.1.1-py2.py3-none-win_amd64.whl", hash = "sha256:500235b97d42d83657013dd2b2a35689ee60920ba0a026de5ca2bed9e7b30f2a"},
-]
-
-[[package]]
-name = "intel-cmplr-lib-ur"
-version = "2025.1.1"
-summary = "Intel® oneAPI Unified Runtime Libraries package"
-groups = ["default"]
-dependencies = [
-    "umf==0.10.*",
-]
-files = [
-    {file = "intel_cmplr_lib_ur-2025.1.1-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:b34ddb46fc70e21209297ac13f800e37be390df1589f4dd22e194b289871f30e"},
-    {file = "intel_cmplr_lib_ur-2025.1.1-py2.py3-none-win_amd64.whl", hash = "sha256:a4d2fd91930ea017e9c8dd757b8159352aa7852344eb609d8f855b9efea11cea"},
-]
-
-[[package]]
-name = "intel-cmplr-lic-rt"
-version = "2025.1.1"
-summary = "Intel® oneAPI Runtime COMMON LICENSING package"
-groups = ["default"]
-files = [
-    {file = "intel_cmplr_lic_rt-2025.1.1-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:561ff766d70e499d334c1fccdf207c26b29c7a4b76bb783548cc2f0d9c8ad628"},
-    {file = "intel_cmplr_lic_rt-2025.1.1-py2.py3-none-win_amd64.whl", hash = "sha256:524ad6176d12df567386548823baf8603976e58cc23ab0a8d3da544bfee259f2"},
-]
-
-[[package]]
-name = "intel-extension-for-pytorch"
-version = "2.8.10+xpu"
-summary = "Intel® Extension for PyTorch*"
-groups = ["default"]
-dependencies = [
-    "numpy",
-    "packaging",
-    "psutil",
-]
-files = [
-    {file = "intel_extension_for_pytorch-2.8.10+xpu-cp312-cp312-linux_x86_64.whl", hash = "sha256:50c5bd465148988b8034abb606d5da4cc309c6b4ef13bdaed16e2527c94a8a98"},
-    {file = "intel_extension_for_pytorch-2.8.10+xpu-cp312-cp312-win_amd64.whl", hash = "sha256:6de4c978d0fd5992fa6ddeaeef1e1700c7c0c7eaea2686ac04f0d92539ec90a6"},
-]
-
-[[package]]
-name = "intel-opencl-rt"
-version = "2025.1.1"
-summary = "Intel® oneAPI OpenCL*  Runtime package"
-groups = ["default"]
-dependencies = [
-    "intel-cmplr-lic-rt==2025.*",
-    "tbb==2022.*",
-]
-files = [
-    {file = "intel_opencl_rt-2025.1.1-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:0e194c2ba8540a41b811721ced9de88ec0bb8eba17cc4a46af91f8ce67941bc1"},
-    {file = "intel_opencl_rt-2025.1.1-py2.py3-none-win_amd64.whl", hash = "sha256:1c134e0ffbe05cf58028d93d7f66f346f4a429370200aedda094d840f3f2a50a"},
-]
-
-[[package]]
-name = "intel-openmp"
-version = "2025.1.1"
-summary = "Intel® OpenMP* Runtime Library"
-groups = ["default"]
-dependencies = [
-    "intel-cmplr-lib-ur==2025.1.1",
-]
-files = [
-    {file = "intel_openmp-2025.1.1-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:c3d3255f4076b86b6fb7e556492c4722be583bb958f095adc92d7a0e3807ec51"},
-    {file = "intel_openmp-2025.1.1-py2.py3-none-win_amd64.whl", hash = "sha256:4a63f6e0a302f08f8fab1109b91b4678f790e0ef508942ee4b2438ce1a253a60"},
-]
-
-[[package]]
-name = "intel-pti"
-version = "0.12.3"
-summary = "Intel® Profiling Tools Interface"
-groups = ["default"]
-files = [
-    {file = "intel_pti-0.12.3-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:547b96effeb1e7480ebf5c55844fd7d84b49d8aedf78782625657a47279f0095"},
-    {file = "intel_pti-0.12.3-py2.py3-none-win_amd64.whl", hash = "sha256:46bbbea735cb04a263d8e5c64bb8fb5e274cc7af185f9987bcb395f0b3c5e693"},
-]
-
-[[package]]
-name = "intel-sycl-rt"
-version = "2025.1.1"
-summary = "Intel® oneAPI DPC++/C++ SYCL Compiler Runtime package"
-groups = ["default"]
-dependencies = [
-    "intel-cmplr-lib-rt==2025.1.1",
-    "intel-cmplr-lib-ur==2025.1.1",
-    "intel-cmplr-lic-rt==2025.1.1",
-]
-files = [
-    {file = "intel_sycl_rt-2025.1.1-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:af82eeab518519c1177ebfed9e05a508a6f2c69795b33c2cf8e54b8020909b30"},
-    {file = "intel_sycl_rt-2025.1.1-py2.py3-none-win_amd64.whl", hash = "sha256:34330646844771f03d040b05b39668ff8ff6f647285adac95421209be4f28d5b"},
 ]
 
 [[package]]
@@ -775,20 +640,6 @@ files = [
 ]
 
 [[package]]
-name = "mkl"
-version = "2025.1.0"
-summary = "Intel® oneAPI Math Kernel Library"
-groups = ["default"]
-dependencies = [
-    "intel-openmp<2026,>=2024",
-    "tbb==2022.*",
-]
-files = [
-    {file = "mkl-2025.1.0-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:1c201bc314304760d995a2b5cc7df9175afba2d3eb7aa70c4917ebe35c2f48de"},
-    {file = "mkl-2025.1.0-py2.py3-none-win_amd64.whl", hash = "sha256:6f459efc394360675efa78c9e9e6fdfa2883f1c730b0323bca414e8df47d4598"},
-]
-
-[[package]]
 name = "mpmath"
 version = "1.3.0"
 summary = "Python library for arbitrary-precision floating-point arithmetic"
@@ -815,17 +666,6 @@ files = [
     {file = "msgpack-1.1.2-cp312-cp312-win_amd64.whl", hash = "sha256:1de460f0403172cff81169a30b9a92b260cb809c4cb7e2fc79ae8d0510c78b6b"},
     {file = "msgpack-1.1.2-cp312-cp312-win_arm64.whl", hash = "sha256:be5980f3ee0e6bd44f3a9e9dea01054f175b50c3e6cdb692bc9424c0bbb8bf69"},
     {file = "msgpack-1.1.2.tar.gz", hash = "sha256:3b60763c1373dd60f398488069bcdc703cd08a711477b5d480eecc9f9626f47e"},
-]
-
-[[package]]
-name = "networkx"
-version = "3.6.1"
-requires_python = "!=3.14.1,>=3.11"
-summary = "Python package for creating and manipulating graphs and networks"
-groups = ["default"]
-files = [
-    {file = "networkx-3.6.1-py3-none-any.whl", hash = "sha256:d47fbf302e7d9cbbb9e2555a0d267983d2aa476bac30e90dfbe5669bd57f3762"},
-    {file = "networkx-3.6.1.tar.gz", hash = "sha256:26b7c357accc0c8cde558ad486283728b65b6a95d85ee1cd66bafab4c8168509"},
 ]
 
 [[package]]
@@ -868,116 +708,43 @@ files = [
 ]
 
 [[package]]
-name = "oneccl"
-version = "2021.15.2"
-summary = "Intel® oneAPI Collective Communications Library"
+name = "onnxruntime"
+version = "1.24.4"
+requires_python = ">=3.11"
+summary = "ONNX Runtime is a runtime accelerator for Machine Learning models"
 groups = ["default"]
-marker = "platform_system == \"Linux\" and platform_machine == \"x86_64\""
 dependencies = [
-    "impi-rt==2021.15.*",
-    "intel-sycl-rt==2025.1.*",
+    "flatbuffers",
+    "numpy>=1.21.6",
+    "packaging",
+    "protobuf",
+    "sympy",
 ]
 files = [
-    {file = "oneccl-2021.15.2-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:025b7aacd6f01db9815f27cdec4016a4b59d9e6a99d25c34cd9d961978ecd0bd"},
+    {file = "onnxruntime-1.24.4-cp312-cp312-macosx_14_0_arm64.whl", hash = "sha256:cad1c2b3f455c55678ab2a8caa51fb420c25e6e3cf10f4c23653cdabedc8de78"},
+    {file = "onnxruntime-1.24.4-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:1a5c5a544b22f90859c88617ecb30e161ee3349fcc73878854f43d77f00558b5"},
+    {file = "onnxruntime-1.24.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:0d640eb9f3782689b55cfa715094474cd5662f2f137be6a6f847a594b6e9705c"},
+    {file = "onnxruntime-1.24.4-cp312-cp312-win_amd64.whl", hash = "sha256:535b29475ca42b593c45fbb2152fbf1cdf3f287315bf650e6a724a0a1d065cdb"},
+    {file = "onnxruntime-1.24.4-cp312-cp312-win_arm64.whl", hash = "sha256:e6214096e14b7b52e3bee1903dc12dc7ca09cb65e26664668a4620cc5e6f9a90"},
 ]
 
 [[package]]
-name = "oneccl-bind-pt"
-version = "2.8.0+xpu"
-summary = ""
-groups = ["default"]
-files = [
-    {file = "oneccl_bind_pt-2.8.0+xpu-cp312-cp312-linux_x86_64.whl", hash = "sha256:8698ba3316126ced7efd1545fe5363df5daa95386ddde122a42f3f0e8ffd47a4"},
-]
-
-[[package]]
-name = "oneccl-devel"
-version = "2021.15.2"
-summary = "Intel® oneAPI Collective Communications Library"
-groups = ["default"]
-marker = "platform_system == \"Linux\" and platform_machine == \"x86_64\""
-dependencies = [
-    "oneccl==2021.15.2",
-]
-files = [
-    {file = "oneccl_devel-2021.15.2-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:4d87bd3583438f40f6f3011627ad9f40de0498573a35ec81913ea54095b7e9e1"},
-]
-
-[[package]]
-name = "onemkl-sycl-blas"
-version = "2025.1.0"
-summary = "Intel® oneAPI Math Kernel Library"
+name = "onnxruntime-webgpu"
+version = "1.25.0.dev20260212001"
+requires_python = ">=3.10"
+summary = "ONNX Runtime is a runtime accelerator for Machine Learning models"
 groups = ["default"]
 dependencies = [
-    "dpcpp-cpp-rt==2025.*",
-    "intel-opencl-rt==2025.*",
-    "mkl==2025.1.0",
+    "flatbuffers",
+    "numpy>=1.21.6",
+    "packaging",
+    "protobuf",
+    "sympy",
 ]
 files = [
-    {file = "onemkl_sycl_blas-2025.1.0-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:6d445181651b4c9b7a62db3043df007e251622203b359d72a8a2037b08e14f75"},
-    {file = "onemkl_sycl_blas-2025.1.0-py2.py3-none-win_amd64.whl", hash = "sha256:cf120244f9e187d98d3cf4d28d73dc3d3749188fb71c8fd73a50f8f114a65663"},
-]
-
-[[package]]
-name = "onemkl-sycl-dft"
-version = "2025.1.0"
-summary = "Intel® oneAPI Math Kernel Library"
-groups = ["default"]
-dependencies = [
-    "dpcpp-cpp-rt==2025.*",
-    "intel-opencl-rt==2025.*",
-    "mkl==2025.1.0",
-]
-files = [
-    {file = "onemkl_sycl_dft-2025.1.0-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:14e6eef173fcec2c7cb111ca07590532375e534985d9476265c8481c874af105"},
-    {file = "onemkl_sycl_dft-2025.1.0-py2.py3-none-win_amd64.whl", hash = "sha256:f49f4d6d80d50ab4b0ab23bf69193ba55d3a695bfe0edd9c74713f699f7e29c9"},
-]
-
-[[package]]
-name = "onemkl-sycl-lapack"
-version = "2025.1.0"
-summary = "Intel® oneAPI Math Kernel Library"
-groups = ["default"]
-dependencies = [
-    "dpcpp-cpp-rt==2025.*",
-    "intel-opencl-rt==2025.*",
-    "mkl==2025.1.0",
-    "onemkl-sycl-blas==2025.1.0",
-]
-files = [
-    {file = "onemkl_sycl_lapack-2025.1.0-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:74f976ebd6a32140e5b27144c825d2e5585d5ba91f0dcac50476d78a1bdc0c81"},
-    {file = "onemkl_sycl_lapack-2025.1.0-py2.py3-none-win_amd64.whl", hash = "sha256:55862fc6bd2b91b489dee32c10f01caa3f26ccaf735d3dc4f8c7c6bae90e9d42"},
-]
-
-[[package]]
-name = "onemkl-sycl-rng"
-version = "2025.1.0"
-summary = "Intel® oneAPI Math Kernel Library"
-groups = ["default"]
-dependencies = [
-    "dpcpp-cpp-rt==2025.*",
-    "intel-opencl-rt==2025.*",
-    "mkl==2025.1.0",
-]
-files = [
-    {file = "onemkl_sycl_rng-2025.1.0-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:19669e714d74b21b2b2b07e2fd25b144b9f9fedba1da94922e8a4f64d9e1f53e"},
-    {file = "onemkl_sycl_rng-2025.1.0-py2.py3-none-win_amd64.whl", hash = "sha256:72933d4d955e0d83e6a36e882370c480e5cb79d1f700e3c3144522e181f142dd"},
-]
-
-[[package]]
-name = "onemkl-sycl-sparse"
-version = "2025.1.0"
-summary = "Intel® oneAPI Math Kernel Library"
-groups = ["default"]
-dependencies = [
-    "dpcpp-cpp-rt==2025.*",
-    "intel-opencl-rt==2025.*",
-    "mkl==2025.1.0",
-    "onemkl-sycl-blas==2025.1.0",
-]
-files = [
-    {file = "onemkl_sycl_sparse-2025.1.0-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:d2e81d57f472977d89f9e4f2be093c048ae4ea35b8acee96b8656e1d4cedbe39"},
-    {file = "onemkl_sycl_sparse-2025.1.0-py2.py3-none-win_amd64.whl", hash = "sha256:fc28616c8109bdf7fd748f753a0a6d9718afa06f8561cd705e3038015e10c7b4"},
+    {file = "onnxruntime_webgpu-1.25.0.dev20260212001-cp312-cp312-macosx_14_0_arm64.whl", hash = "sha256:d97eb46a7875049352a3a7a28b373d07b34b14cbe2e89eca0dd5c26fa6fb1e11"},
+    {file = "onnxruntime_webgpu-1.25.0.dev20260212001-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:81b6669fcc9ec4435576eabb7ce14c262ce9b18a0b35e391a334e7a7f54243f8"},
+    {file = "onnxruntime_webgpu-1.25.0.dev20260212001-cp312-cp312-win_amd64.whl", hash = "sha256:24937ad09a501293b9c4ccc16de8d471bc509f23881a4b5f716eff4920f890fb"},
 ]
 
 [[package]]
@@ -1014,27 +781,6 @@ files = [
 ]
 
 [[package]]
-name = "pillow"
-version = "12.1.1"
-requires_python = ">=3.10"
-summary = "Python Imaging Library (fork)"
-groups = ["default"]
-files = [
-    {file = "pillow-12.1.1-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:ab323b787d6e18b3d91a72fc99b1a2c28651e4358749842b8f8dfacd28ef2052"},
-    {file = "pillow-12.1.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:adebb5bee0f0af4909c30db0d890c773d1a92ffe83da908e2e9e720f8edf3984"},
-    {file = "pillow-12.1.1-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:bb66b7cc26f50977108790e2456b7921e773f23db5630261102233eb355a3b79"},
-    {file = "pillow-12.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:aee2810642b2898bb187ced9b349e95d2a7272930796e022efaf12e99dccd293"},
-    {file = "pillow-12.1.1-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:a0b1cd6232e2b618adcc54d9882e4e662a089d5768cd188f7c245b4c8c44a397"},
-    {file = "pillow-12.1.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:7aac39bcf8d4770d089588a2e1dd111cbaa42df5a94be3114222057d68336bd0"},
-    {file = "pillow-12.1.1-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:ab174cd7d29a62dd139c44bf74b698039328f45cb03b4596c43473a46656b2f3"},
-    {file = "pillow-12.1.1-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:339ffdcb7cbeaa08221cd401d517d4b1fe7a9ed5d400e4a8039719238620ca35"},
-    {file = "pillow-12.1.1-cp312-cp312-win32.whl", hash = "sha256:5d1f9575a12bed9e9eedd9a4972834b08c97a352bd17955ccdebfeca5913fa0a"},
-    {file = "pillow-12.1.1-cp312-cp312-win_amd64.whl", hash = "sha256:21329ec8c96c6e979cd0dfd29406c40c1d52521a90544463057d2aaa937d66a6"},
-    {file = "pillow-12.1.1-cp312-cp312-win_arm64.whl", hash = "sha256:af9a332e572978f0218686636610555ae3defd1633597be015ed50289a03c523"},
-    {file = "pillow-12.1.1.tar.gz", hash = "sha256:9ad8fa5937ab05218e2b6a4cff30295ad35afd2f83ac592e68c0d871bb0fdbc4"},
-]
-
-[[package]]
 name = "platformdirs"
 version = "4.9.4"
 requires_python = ">=3.10"
@@ -1062,21 +808,20 @@ files = [
 ]
 
 [[package]]
-name = "psutil"
-version = "7.2.2"
-requires_python = ">=3.6"
-summary = "Cross-platform lib for process and system monitoring."
+name = "protobuf"
+version = "7.34.1"
+requires_python = ">=3.10"
+summary = ""
 groups = ["default"]
 files = [
-    {file = "psutil-7.2.2-cp36-abi3-macosx_10_9_x86_64.whl", hash = "sha256:ed0cace939114f62738d808fdcecd4c869222507e266e574799e9c0faa17d486"},
-    {file = "psutil-7.2.2-cp36-abi3-macosx_11_0_arm64.whl", hash = "sha256:1a7b04c10f32cc88ab39cbf606e117fd74721c831c98a27dc04578deb0c16979"},
-    {file = "psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:076a2d2f923fd4821644f5ba89f059523da90dc9014e85f8e45a5774ca5bc6f9"},
-    {file = "psutil-7.2.2-cp36-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:b0726cecd84f9474419d67252add4ac0cd9811b04d61123054b9fb6f57df6e9e"},
-    {file = "psutil-7.2.2-cp36-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:fd04ef36b4a6d599bbdb225dd1d3f51e00105f6d48a28f006da7f9822f2606d8"},
-    {file = "psutil-7.2.2-cp36-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:b58fabe35e80b264a4e3bb23e6b96f9e45a3df7fb7eed419ac0e5947c61e47cc"},
-    {file = "psutil-7.2.2-cp37-abi3-win_amd64.whl", hash = "sha256:eb7e81434c8d223ec4a219b5fc1c47d0417b12be7ea866e24fb5ad6e84b3d988"},
-    {file = "psutil-7.2.2-cp37-abi3-win_arm64.whl", hash = "sha256:8c233660f575a5a89e6d4cb65d9f938126312bca76d8fe087b947b3a1aaac9ee"},
-    {file = "psutil-7.2.2.tar.gz", hash = "sha256:0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"},
+    {file = "protobuf-7.34.1-cp310-abi3-macosx_10_9_universal2.whl", hash = "sha256:d8b2cc79c4d8f62b293ad9b11ec3aebce9af481fa73e64556969f7345ebf9fc7"},
+    {file = "protobuf-7.34.1-cp310-abi3-manylinux2014_aarch64.whl", hash = "sha256:5185e0e948d07abe94bb76ec9b8416b604cfe5da6f871d67aad30cbf24c3110b"},
+    {file = "protobuf-7.34.1-cp310-abi3-manylinux2014_s390x.whl", hash = "sha256:403b093a6e28a960372b44e5eb081775c9b056e816a8029c61231743d63f881a"},
+    {file = "protobuf-7.34.1-cp310-abi3-manylinux2014_x86_64.whl", hash = "sha256:8ff40ce8cd688f7265326b38d5a1bed9bfdf5e6723d49961432f83e21d5713e4"},
+    {file = "protobuf-7.34.1-cp310-abi3-win32.whl", hash = "sha256:34b84ce27680df7cca9f231043ada0daa55d0c44a2ddfaa58ec1d0d89d8bf60a"},
+    {file = "protobuf-7.34.1-cp310-abi3-win_amd64.whl", hash = "sha256:e97b55646e6ce5cbb0954a8c28cd39a5869b59090dfaa7df4598a7fba869468c"},
+    {file = "protobuf-7.34.1-py3-none-any.whl", hash = "sha256:bb3812cd53aefea2b028ef42bd780f5b96407247f20c6ef7c679807e9d188f11"},
+    {file = "protobuf-7.34.1.tar.gz", hash = "sha256:9ce42245e704cc5027be797c1db1eb93184d44d1cdd71811fb2d9b25ad541280"},
 ]
 
 [[package]]
@@ -1180,6 +925,7 @@ dependencies = [
     "pydantic==2.12.5",
     "pydantic==2.12.5",
     "pydantic==2.12.5",
+    "pydantic==2.12.5",
 ]
 files = [
     {file = "pydantic-2.12.5-py3-none-any.whl", hash = "sha256:e561593fccf61e8a20fc46dfc2dfe075b8be7d0188df33f221ad1f0139180f9d"},
@@ -1234,21 +980,6 @@ files = [
 ]
 
 [[package]]
-name = "pytorch-triton-xpu"
-version = "3.4.0"
-requires_python = ">=3.9,<3.14"
-summary = "A language and compiler for custom Deep Learning operations"
-groups = ["default"]
-dependencies = [
-    "importlib-metadata; python_version < \"3.10\"",
-    "setuptools>=70.2.0",
-]
-files = [
-    {file = "pytorch_triton_xpu-3.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:df4bb3282bac9a3b90231700077110d8680b338416de03c2b7c6133c9b602649"},
-    {file = "pytorch_triton_xpu-3.4.0-cp312-cp312-win_amd64.whl", hash = "sha256:4090dde07a4fffc34aaf855701a9db28e9fccb57b368ade520f1a0f8e811c878"},
-]
-
-[[package]]
 name = "pyyaml"
 version = "6.0.3"
 requires_python = ">=3.8"
@@ -1266,32 +997,6 @@ files = [
     {file = "pyyaml-6.0.3-cp312-cp312-win_amd64.whl", hash = "sha256:5fcd34e47f6e0b794d17de1b4ff496c00986e1c83f7ab2fb8fcfe9616ff7477b"},
     {file = "pyyaml-6.0.3-cp312-cp312-win_arm64.whl", hash = "sha256:64386e5e707d03a7e172c0701abfb7e10f0fb753ee1d773128192742712a98fd"},
     {file = "pyyaml-6.0.3.tar.gz", hash = "sha256:d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"},
-]
-
-[[package]]
-name = "regex"
-version = "2026.2.28"
-requires_python = ">=3.10"
-summary = "Alternative regular expression module, to replace re."
-groups = ["default"]
-files = [
-    {file = "regex-2026.2.28-cp312-cp312-macosx_10_13_universal2.whl", hash = "sha256:fcf26c3c6d0da98fada8ae4ef0aa1c3405a431c0a77eb17306d38a89b02adcd7"},
-    {file = "regex-2026.2.28-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:02473c954af35dd2defeb07e44182f5705b30ea3f351a7cbffa9177beb14da5d"},
-    {file = "regex-2026.2.28-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:9b65d33a17101569f86d9c5966a8b1d7fbf8afdda5a8aa219301b0a80f58cf7d"},
-    {file = "regex-2026.2.28-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:e71dcecaa113eebcc96622c17692672c2d104b1d71ddf7adeda90da7ddeb26fc"},
-    {file = "regex-2026.2.28-cp312-cp312-manylinux2014_ppc64le.manylinux_2_17_ppc64le.manylinux_2_28_ppc64le.whl", hash = "sha256:481df4623fa4969c8b11f3433ed7d5e3dc9cec0f008356c3212b3933fb77e3d8"},
-    {file = "regex-2026.2.28-cp312-cp312-manylinux2014_s390x.manylinux_2_17_s390x.manylinux_2_28_s390x.whl", hash = "sha256:64e7c6ad614573e0640f271e811a408d79a9e1fe62a46adb602f598df42a818d"},
-    {file = "regex-2026.2.28-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:d6b08a06976ff4fb0d83077022fde3eca06c55432bb997d8c0495b9a4e9872f4"},
-    {file = "regex-2026.2.28-cp312-cp312-manylinux_2_31_riscv64.manylinux_2_39_riscv64.whl", hash = "sha256:864cdd1a2ef5716b0ab468af40139e62ede1b3a53386b375ec0786bb6783fc05"},
-    {file = "regex-2026.2.28-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:511f7419f7afab475fd4d639d4aedfc54205bcb0800066753ef68a59f0f330b5"},
-    {file = "regex-2026.2.28-cp312-cp312-musllinux_1_2_ppc64le.whl", hash = "sha256:b42f7466e32bf15a961cf09f35fa6323cc72e64d3d2c990b10de1274a5da0a59"},
-    {file = "regex-2026.2.28-cp312-cp312-musllinux_1_2_riscv64.whl", hash = "sha256:8710d61737b0c0ce6836b1da7109f20d495e49b3809f30e27e9560be67a257bf"},
-    {file = "regex-2026.2.28-cp312-cp312-musllinux_1_2_s390x.whl", hash = "sha256:4390c365fd2d45278f45afd4673cb90f7285f5701607e3ad4274df08e36140ae"},
-    {file = "regex-2026.2.28-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:cb3b1db8ff6c7b8bf838ab05583ea15230cb2f678e569ab0e3a24d1e8320940b"},
-    {file = "regex-2026.2.28-cp312-cp312-win32.whl", hash = "sha256:f8ed9a5d4612df9d4de15878f0bc6aa7a268afbe5af21a3fdd97fa19516e978c"},
-    {file = "regex-2026.2.28-cp312-cp312-win_amd64.whl", hash = "sha256:01d65fd24206c8e1e97e2e31b286c59009636c022eb5d003f52760b0f42155d4"},
-    {file = "regex-2026.2.28-cp312-cp312-win_arm64.whl", hash = "sha256:c0b5ccbb8ffb433939d248707d4a8b31993cb76ab1a0187ca886bf50e96df952"},
-    {file = "regex-2026.2.28.tar.gz", hash = "sha256:a729e47d418ea11d03469f321aaf67cdee8954cde3ff2cf8403ab87951ad10f2"},
 ]
 
 [[package]]
@@ -1368,30 +1073,6 @@ files = [
 ]
 
 [[package]]
-name = "safetensors"
-version = "0.7.0"
-requires_python = ">=3.9"
-summary = ""
-groups = ["default"]
-files = [
-    {file = "safetensors-0.7.0-cp38-abi3-macosx_10_12_x86_64.whl", hash = "sha256:c82f4d474cf725255d9e6acf17252991c3c8aac038d6ef363a4bf8be2f6db517"},
-    {file = "safetensors-0.7.0-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:94fd4858284736bb67a897a41608b5b0c2496c9bdb3bf2af1fa3409127f20d57"},
-    {file = "safetensors-0.7.0-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e07d91d0c92a31200f25351f4acb2bc6aff7f48094e13ebb1d0fb995b54b6542"},
-    {file = "safetensors-0.7.0-cp38-abi3-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:8469155f4cb518bafb4acf4865e8bb9d6804110d2d9bdcaa78564b9fd841e104"},
-    {file = "safetensors-0.7.0-cp38-abi3-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:54bef08bf00a2bff599982f6b08e8770e09cc012d7bba00783fc7ea38f1fb37d"},
-    {file = "safetensors-0.7.0-cp38-abi3-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:42cb091236206bb2016d245c377ed383aa7f78691748f3bb6ee1bfa51ae2ce6a"},
-    {file = "safetensors-0.7.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:dac7252938f0696ddea46f5e855dd3138444e82236e3be475f54929f0c510d48"},
-    {file = "safetensors-0.7.0-cp38-abi3-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:1d060c70284127fa805085d8f10fbd0962792aed71879d00864acda69dbab981"},
-    {file = "safetensors-0.7.0-cp38-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:cdab83a366799fa730f90a4ebb563e494f28e9e92c4819e556152ad55e43591b"},
-    {file = "safetensors-0.7.0-cp38-abi3-musllinux_1_2_armv7l.whl", hash = "sha256:672132907fcad9f2aedcb705b2d7b3b93354a2aec1b2f706c4db852abe338f85"},
-    {file = "safetensors-0.7.0-cp38-abi3-musllinux_1_2_i686.whl", hash = "sha256:5d72abdb8a4d56d4020713724ba81dac065fedb7f3667151c4a637f1d3fb26c0"},
-    {file = "safetensors-0.7.0-cp38-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:b0f6d66c1c538d5a94a73aa9ddca8ccc4227e6c9ff555322ea40bdd142391dd4"},
-    {file = "safetensors-0.7.0-cp38-abi3-win32.whl", hash = "sha256:c74af94bf3ac15ac4d0f2a7c7b4663a15f8c2ab15ed0fc7531ca61d0835eccba"},
-    {file = "safetensors-0.7.0-cp38-abi3-win_amd64.whl", hash = "sha256:d1239932053f56f3456f32eb9625590cc7582e905021f94636202a864d470755"},
-    {file = "safetensors-0.7.0.tar.gz", hash = "sha256:07663963b67e8bd9f0b8ad15bb9163606cd27cc5a1b96235a50d8369803b96b0"},
-]
-
-[[package]]
 name = "scikit-learn"
 version = "1.8.0"
 requires_python = ">=3.11"
@@ -1449,17 +1130,6 @@ dependencies = [
 files = [
     {file = "sentry_sdk-2.56.0-py2.py3-none-any.whl", hash = "sha256:5afafb744ceb91d22f4cc650c6bd048ac6af5f7412dcc6c59305a2e36f4dbc02"},
     {file = "sentry_sdk-2.56.0.tar.gz", hash = "sha256:fdab72030b69625665b2eeb9738bdde748ad254e8073085a0ce95382678e8168"},
-]
-
-[[package]]
-name = "setuptools"
-version = "82.0.1"
-requires_python = ">=3.9"
-summary = "Most extensible Python build backend with support for C/C++ extension modules"
-groups = ["default"]
-files = [
-    {file = "setuptools-82.0.1-py3-none-any.whl", hash = "sha256:a59e362652f08dcd477c78bb6e7bd9d80a7995bc73ce773050228a348ce2e5bb"},
-    {file = "setuptools-82.0.1.tar.gz", hash = "sha256:7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"},
 ]
 
 [[package]]
@@ -1552,29 +1222,6 @@ files = [
 ]
 
 [[package]]
-name = "tbb"
-version = "2022.1.0"
-summary = "Intel® oneAPI Threading Building Blocks (oneTBB)"
-groups = ["default"]
-dependencies = [
-    "tcmlib==1.*",
-]
-files = [
-    {file = "tbb-2022.1.0-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:4992a3f2268b33f9a7b4c274af9d7001f550e74246436647b267d58e4947628a"},
-    {file = "tbb-2022.1.0-py3-none-win_amd64.whl", hash = "sha256:ae9cc327606f604324441abf3ab984c12ea4f6f1ea2a84230874fc40036d0913"},
-]
-
-[[package]]
-name = "tcmlib"
-version = "1.3.0"
-summary = "Thread Composability Manager"
-groups = ["default"]
-files = [
-    {file = "tcmlib-1.3.0-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:c328ba464c556e46174879c694cafd17ba17c3e7406a79fee47bb3e8c9c6a6c5"},
-    {file = "tcmlib-1.3.0-py2.py3-none-win_amd64.whl", hash = "sha256:878c9ce2ae5705da3964b7d00ff721c0c61b23a0aa93960629b2119c2921a1e2"},
-]
-
-[[package]]
 name = "threadpoolctl"
 version = "3.6.0"
 requires_python = ">=3.9"
@@ -1583,104 +1230,6 @@ groups = ["default"]
 files = [
     {file = "threadpoolctl-3.6.0-py3-none-any.whl", hash = "sha256:43a0b8fd5a2928500110039e43a5eed8480b918967083ea48dc3ab9f13c4a7fb"},
     {file = "threadpoolctl-3.6.0.tar.gz", hash = "sha256:8ab8b4aa3491d812b623328249fab5302a68d2d71745c8a4c719a2fcaba9f44e"},
-]
-
-[[package]]
-name = "tokenizers"
-version = "0.22.2"
-requires_python = ">=3.9"
-summary = ""
-groups = ["default"]
-dependencies = [
-    "huggingface-hub<2.0,>=0.16.4",
-]
-files = [
-    {file = "tokenizers-0.22.2-cp39-abi3-macosx_10_12_x86_64.whl", hash = "sha256:544dd704ae7238755d790de45ba8da072e9af3eea688f698b137915ae959281c"},
-    {file = "tokenizers-0.22.2-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:1e418a55456beedca4621dbab65a318981467a2b188e982a23e117f115ce5001"},
-    {file = "tokenizers-0.22.2-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:2249487018adec45d6e3554c71d46eb39fa8ea67156c640f7513eb26f318cec7"},
-    {file = "tokenizers-0.22.2-cp39-abi3-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:25b85325d0815e86e0bac263506dd114578953b7b53d7de09a6485e4a160a7dd"},
-    {file = "tokenizers-0.22.2-cp39-abi3-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:bfb88f22a209ff7b40a576d5324bf8286b519d7358663db21d6246fb17eea2d5"},
-    {file = "tokenizers-0.22.2-cp39-abi3-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:1c774b1276f71e1ef716e5486f21e76333464f47bece56bbd554485982a9e03e"},
-    {file = "tokenizers-0.22.2-cp39-abi3-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:df6c4265b289083bf710dff49bc51ef252f9d5be33a45ee2bed151114a56207b"},
-    {file = "tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:369cc9fc8cc10cb24143873a0d95438bb8ee257bb80c71989e3ee290e8d72c67"},
-    {file = "tokenizers-0.22.2-cp39-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:29c30b83d8dcd061078b05ae0cb94d3c710555fbb44861139f9f83dcca3dc3e4"},
-    {file = "tokenizers-0.22.2-cp39-abi3-musllinux_1_2_armv7l.whl", hash = "sha256:37ae80a28c1d3265bb1f22464c856bd23c02a05bb211e56d0c5301a435be6c1a"},
-    {file = "tokenizers-0.22.2-cp39-abi3-musllinux_1_2_i686.whl", hash = "sha256:791135ee325f2336f498590eb2f11dc5c295232f288e75c99a36c5dbce63088a"},
-    {file = "tokenizers-0.22.2-cp39-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:38337540fbbddff8e999d59970f3c6f35a82de10053206a7562f1ea02d046fa5"},
-    {file = "tokenizers-0.22.2-cp39-abi3-win32.whl", hash = "sha256:a6bf3f88c554a2b653af81f3204491c818ae2ac6fbc09e76ef4773351292bc92"},
-    {file = "tokenizers-0.22.2-cp39-abi3-win_amd64.whl", hash = "sha256:c9ea31edff2968b44a88f97d784c2f16dc0729b8b143ed004699ebca91f05c48"},
-    {file = "tokenizers-0.22.2-cp39-abi3-win_arm64.whl", hash = "sha256:9ce725d22864a1e965217204946f830c37876eee3b2ba6fc6255e8e903d5fcbc"},
-    {file = "tokenizers-0.22.2.tar.gz", hash = "sha256:473b83b915e547aa366d1eee11806deaf419e17be16310ac0a14077f1e28f917"},
-]
-
-[[package]]
-name = "torch"
-version = "2.8.0+xpu"
-requires_python = ">=3.9.0"
-summary = "Tensors and Dynamic neural networks in Python with strong GPU acceleration"
-groups = ["default"]
-dependencies = [
-    "dpcpp-cpp-rt==2025.1.1",
-    "filelock",
-    "fsspec",
-    "impi-rt==2021.15.0; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
-    "intel-cmplr-lib-rt==2025.1.1",
-    "intel-cmplr-lib-ur==2025.1.1",
-    "intel-cmplr-lic-rt==2025.1.1",
-    "intel-opencl-rt==2025.1.1",
-    "intel-openmp==2025.1.1",
-    "intel-pti==0.12.3",
-    "intel-sycl-rt==2025.1.1",
-    "jinja2",
-    "mkl==2025.1.0",
-    "networkx",
-    "oneccl-devel==2021.15.2; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
-    "oneccl==2021.15.2; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
-    "onemkl-sycl-blas==2025.1.0",
-    "onemkl-sycl-dft==2025.1.0",
-    "onemkl-sycl-lapack==2025.1.0",
-    "onemkl-sycl-rng==2025.1.0",
-    "onemkl-sycl-sparse==2025.1.0",
-    "pytorch-triton-xpu==3.4.0",
-    "setuptools; python_version >= \"3.12\"",
-    "sympy>=1.13.3",
-    "tbb==2022.1.0",
-    "tcmlib==1.3.0",
-    "typing-extensions>=4.10.0",
-    "umf==0.10.0",
-]
-files = [
-    {file = "torch-2.8.0+xpu-cp312-cp312-linux_x86_64.whl", hash = "sha256:e19db8135bde12a4357e5ca09f0176083ba9e70554dd6c90725a19b21690cbad"},
-    {file = "torch-2.8.0+xpu-cp312-cp312-win_amd64.whl", hash = "sha256:0937d8943c145a83d9bafc6f80ef28971167817f9eda26066d33f72caf8a6646"},
-]
-
-[[package]]
-name = "torchaudio"
-version = "2.8.0+xpu"
-summary = "An audio package for PyTorch"
-groups = ["default"]
-dependencies = [
-    "torch==2.8.0",
-]
-files = [
-    {file = "torchaudio-2.8.0+xpu-cp312-cp312-manylinux_2_28_x86_64.whl", hash = "sha256:9f1d68e82a2754fd4dbce6664e6e7ca84bdec1ff346ca69f034758ad8d8078c4"},
-    {file = "torchaudio-2.8.0+xpu-cp312-cp312-win_amd64.whl", hash = "sha256:555d4167e93e64c33929431b31a93f5eb0165a01a61cf18afa8a6bc873f8b601"},
-]
-
-[[package]]
-name = "torchvision"
-version = "0.23.0+xpu"
-requires_python = ">=3.9"
-summary = "image and video datasets and models for torch deep learning"
-groups = ["default"]
-dependencies = [
-    "numpy",
-    "pillow!=8.3.*,>=5.3.0",
-    "torch==2.8.0",
-]
-files = [
-    {file = "torchvision-0.23.0+xpu-cp312-cp312-manylinux_2_28_x86_64.whl", hash = "sha256:0acec355b80c3899841184084f365df336c508602812e34a44007b8b60d53af4"},
-    {file = "torchvision-0.23.0+xpu-cp312-cp312-win_amd64.whl", hash = "sha256:91aafd61864cdce27461cbec13ddbf28c1bc6494265a1e4b80131c64a3b7d18f"},
 ]
 
 [[package]]
@@ -1696,28 +1245,6 @@ dependencies = [
 files = [
     {file = "tqdm-4.67.3-py3-none-any.whl", hash = "sha256:ee1e4c0e59148062281c49d80b25b67771a127c85fc9676d3be5f243206826bf"},
     {file = "tqdm-4.67.3.tar.gz", hash = "sha256:7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"},
-]
-
-[[package]]
-name = "transformers"
-version = "5.3.0"
-requires_python = ">=3.10.0"
-summary = "Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training."
-groups = ["default"]
-dependencies = [
-    "huggingface-hub<2.0,>=1.3.0",
-    "numpy>=1.17",
-    "packaging>=20.0",
-    "pyyaml>=5.1",
-    "regex!=2019.12.17",
-    "safetensors>=0.4.3",
-    "tokenizers<=0.23.0,>=0.22.0",
-    "tqdm>=4.27",
-    "typer",
-]
-files = [
-    {file = "transformers-5.3.0-py3-none-any.whl", hash = "sha256:50ac8c89c3c7033444fb3f9f53138096b997ebb70d4b5e50a2e810bf12d3d29a"},
-    {file = "transformers-5.3.0.tar.gz", hash = "sha256:009555b364029da9e2946d41f1c5de9f15e6b1df46b189b7293f33a161b9c557"},
 ]
 
 [[package]]
@@ -1763,19 +1290,6 @@ files = [
 ]
 
 [[package]]
-name = "umf"
-version = "0.10.0"
-summary = "Unified Memory Framework"
-groups = ["default"]
-dependencies = [
-    "tcmlib==1.3.*",
-]
-files = [
-    {file = "umf-0.10.0-py2.py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:a27a368c614fd9d0e67e9ef77de391a7080697d7a4d51b9035707f629d81dc7c"},
-    {file = "umf-0.10.0-py2.py3-none-win_amd64.whl", hash = "sha256:7b3ee402f1a5bbe418d661970338f75b25a441cb59bb084dca916040f5c3c303"},
-]
-
-[[package]]
 name = "urllib3"
 version = "2.6.3"
 requires_python = ">=3.9"
@@ -1814,6 +1328,7 @@ dependencies = [
     "httptools>=0.6.3",
     "python-dotenv>=0.13",
     "pyyaml>=5.1",
+    "uvicorn==0.42.0",
     "uvicorn==0.42.0",
     "uvicorn==0.42.0",
     "uvicorn==0.42.0",
