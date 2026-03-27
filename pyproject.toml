@@ -9,6 +9,7 @@ dependencies = [
     "librosa>=0.11.0",
     "huggingface-hub>=1.8.0",
     "onnxruntime-webgpu>=1.25.0.dev20260212001",
+    "pydantic-settings>=2.13.1",
 ]
 name = "qwen3-voice-embedding-server"
 version = "0.1.0"
@@ -27,10 +28,6 @@ entrypoint = "src.main:app"
 
 [tool.pdm.scripts]
 start.cmd = "fastapi run"
-start.env.OverrideDefaultFP64Settings = "1"
-start.env.IGC_EnableDPEmulation = "1"
 
 dev.cmd = "fastapi dev"
-dev.env.OverrideDefaultFP64Settings = "1"
-dev.env.IGC_EnableDPEmulation = "1"
 

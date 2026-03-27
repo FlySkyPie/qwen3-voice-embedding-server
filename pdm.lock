@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:1f8ebf790b0df6ac76b86ca7afe9a1e9efb82893aa74c59342c353690ab81f1c"
+content_hash = "sha256:f38d59052ec6e1fd46822621149debadae68a75a88044bf58bbdf3c676eea9c8"
 
 [[metadata.targets]]
 requires_python = "==3.12.*"
@@ -262,6 +262,7 @@ dependencies = [
     "fastapi-cli==0.0.24",
     "fastapi-cli==0.0.24",
     "fastapi-cli==0.0.24",
+    "fastapi-cli==0.0.24",
     "fastapi-cloud-cli>=0.1.1",
     "uvicorn[standard]>=0.15.0",
 ]
@@ -303,6 +304,7 @@ groups = ["default"]
 dependencies = [
     "email-validator>=2.0.0",
     "fastapi-cli[standard]>=0.0.8",
+    "fastapi==0.135.2",
     "fastapi==0.135.2",
     "fastapi==0.135.2",
     "fastapi==0.135.2",
@@ -926,6 +928,7 @@ dependencies = [
     "pydantic==2.12.5",
     "pydantic==2.12.5",
     "pydantic==2.12.5",
+    "pydantic==2.12.5",
 ]
 files = [
     {file = "pydantic-2.12.5-py3-none-any.whl", hash = "sha256:e561593fccf61e8a20fc46dfc2dfe075b8be7d0188df33f221ad1f0139180f9d"},
@@ -1328,6 +1331,7 @@ dependencies = [
     "httptools>=0.6.3",
     "python-dotenv>=0.13",
     "pyyaml>=5.1",
+    "uvicorn==0.42.0",
     "uvicorn==0.42.0",
     "uvicorn==0.42.0",
     "uvicorn==0.42.0",

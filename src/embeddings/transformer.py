@@ -6,14 +6,15 @@ from fastapi import Depends
 from huggingface_hub import hf_hub_download
 
 from src.embeddings.decorator import Singleton
+from src.embeddings.settings import settings
 
 
 @Singleton
 class EmbeddingTransformer:
     def __init__(self):
         model_path = hf_hub_download(
-            repo_id="marksverdhei/Qwen3-Voice-Embedding-12Hz-1.7B-onnx",
-            filename="speaker_encoder_fp32.onnx",
+            repo_id=settings.hf_repo,
+            filename=settings.hf_file,
         )
 
         session = ort.InferenceSession(
@@ -39,7 +40,9 @@ class EmbeddingTransformer:
         mel = mel.T[np.newaxis, ...]  # (1, time, 128)
 
         # Run inference
-        embedding = self.session.run(None, {"mel_spectrogram": mel.astype(np.float32)})[0]
+        embedding = self.session.run(None, {"mel_spectrogram": mel.astype(np.float32)})[
+            0
+        ]
         return embedding[0]
 
 
