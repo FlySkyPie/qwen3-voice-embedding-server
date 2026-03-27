@@ -17,3 +17,7 @@ repos/
 .dockerignore
 .gitignore
 environment.yml
+
+.venv/
+__pycache__
+.pdm-python
