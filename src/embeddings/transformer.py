@@ -25,7 +25,7 @@ class EmbeddingTransformer:
         self.session = session
 
     def embedding(self, audio_path: str):
-        audio, sr = librosa.load(audio_path, sr=None, mono=True)
+        audio, sr = librosa.load(audio_path, sr=24000, mono=True)
         mel = librosa.feature.melspectrogram(
             y=audio,
             sr=24000,
@@ -34,6 +34,8 @@ class EmbeddingTransformer:
             n_mels=128,
             fmin=0,
             fmax=12000,
+            power=1.0,
+            center=True,
         )
 
         mel = np.log(np.clip(mel, a_min=1e-5, a_max=None))

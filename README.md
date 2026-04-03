@@ -13,10 +13,7 @@ Consider original design of OpenAI-compatible API not support multimodal (for `/
 ```yaml
 services:
   qwen3-voice-embedding-server:
-    image: ghcr.io/flyskypie/qwen3-voice-embedding-server:0.1.0
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile
+    image: ghcr.io/flyskypie/qwen3-voice-embedding-server:0.1.1
     devices:
       - /dev/dri/:/dev/dri/
     ports:

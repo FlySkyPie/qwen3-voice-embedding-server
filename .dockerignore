@@ -21,3 +21,5 @@ environment.yml
 .venv/
 __pycache__
 .pdm-python
+
+docker/

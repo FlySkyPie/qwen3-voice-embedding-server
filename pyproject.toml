@@ -12,7 +12,7 @@ dependencies = [
     "pydantic-settings>=2.13.1",
 ]
 name = "qwen3-voice-embedding-server"
-version = "0.1.0"
+version = "0.1.1"
 description = "Default template for PDM package"
 authors = [{ name = "Wei Ji (FlySkyPie)", email = "c445dj544@gmail.com" }]
 requires-python = "==3.12.*"
