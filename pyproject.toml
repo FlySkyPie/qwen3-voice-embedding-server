@@ -5,14 +5,13 @@ dependencies = [
     "openai>=2.29.0",
 
     "numpy>=2.4.3",
-    "onnxruntime>=1.24.4",
     "librosa>=0.11.0",
     "huggingface-hub>=1.8.0",
     "onnxruntime-webgpu>=1.25.0.dev20260212001",
     "pydantic-settings>=2.13.1",
 ]
 name = "qwen3-voice-embedding-server"
-version = "0.1.1"
+version = "0.1.2"
 description = "Default template for PDM package"
 authors = [{ name = "Wei Ji (FlySkyPie)", email = "c445dj544@gmail.com" }]
 requires-python = "==3.12.*"
