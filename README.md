@@ -1,5 +1,7 @@
 # Qwen3 Voice Embedding Server
 
+![](./docs/PCA.webp)
+
 This project used to wrapping `marksverdhei/Qwen3-Voice-Embedding-12Hz-1.7B-onnx` model as OpenAI-compatible API.
 
 ## Notice
@@ -13,7 +15,7 @@ Consider original design of OpenAI-compatible API not support multimodal (for `/
 ```yaml
 services:
   qwen3-voice-embedding-server:
-    image: ghcr.io/flyskypie/qwen3-voice-embedding-server:0.1.1
+    image: ghcr.io/flyskypie/qwen3-voice-embedding-server:0.1.2
     devices:
       - /dev/dri/:/dev/dri/
     ports:
